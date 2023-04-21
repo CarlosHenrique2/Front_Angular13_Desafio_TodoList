@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { prioridades, tasks } from 'src/app/interfaces/interfaces';
+import { prioridades, tasks } from '../../interfaces/interfaces';
 import { TaskService } from '../task.service';
 
 @Component({

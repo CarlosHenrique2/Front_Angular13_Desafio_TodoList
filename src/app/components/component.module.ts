@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeTodoComponent } from './home-todo/home-todo.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { TaskService } from './task.service';
-import { SharedModule } from 'src/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { ListTaskComponent } from './list-task/list-task.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';

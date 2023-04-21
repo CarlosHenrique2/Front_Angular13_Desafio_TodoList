@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { tasks } from 'src/app/interfaces/interfaces';
+import { tasks } from '../../interfaces/interfaces';
 import { EditTaskComponent } from '../edit-task/edit-task.component';
 import { TaskService } from '../task.service';
 
