@@ -2,10 +2,17 @@
   "tasks": [
     {
       "id": 1,
-      "titulo": "banans55",
-      "descricao": "carlos",
+      "titulo": "Tirar o lixo",
+      "descricao": "as 19:00 que o lixeiro passa",
       "data": "2023-04-04T03:00:00.000Z",
       "prioridade": "Baixa"
+    },
+    {
+      "id": 2,
+      "titulo": "Estudar javascript",
+      "descricao": "Fazer becrownd e leitura de estrutura de dados",
+      "data": "2023-04-04T03:00:00.000Z",
+      "prioridade": "Alta"
     }
   ]
 }
