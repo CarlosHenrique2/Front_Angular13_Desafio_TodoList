@@ -1,7 +1,7 @@
 <h1 align="center" style="color:#00ACC1">
     <img src="https://github.com/CarlosHenrique2/Todo/blob/main/src/assets/todo.JPG"/>
     <br>
-    Projeto Todo
+    Projeto Todo Angular
 </h1>
 
 ## Configuração para uso do projeto
