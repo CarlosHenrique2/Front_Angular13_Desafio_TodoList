@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>TODO APP</mat-card-title>
+    </mat-card-header>
+
+<div class="form_creat--task" [formGroup]="formtask">
+  <mat-form-field appearance="outline">
+    <mat-label>Informe o titulo da tarefa</mat-label>
+      <input matInput formControlName="titulo" placeholder="Informe o titulo da tarefa">
+      
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Informe a descrição da tarefa</mat-label>
+      <input matInput formControlName="descricao" placeholder="Informe a descrição da tarefa">
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Informe a data da sua tarefa</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="data" placeholder="Informe a data da sua tarefa">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Prioridades</mat-label>
+        <mat-select formControlName="prioridade">
+          <mat-option *ngFor="let prioridade of prioridades"  [value]="prioridade.value">
+            {{ prioridade.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+  </div>
+
+    <button mat-button (click)="createTask()" ><img src="../../../assets/fluent-mdl2_calculator-addition.svg"></button> 
+    <app-list-task [tasks]="tasks"></app-list-task>
+  </mat-card>
+
+  

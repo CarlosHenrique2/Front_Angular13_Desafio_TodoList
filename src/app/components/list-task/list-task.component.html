@@ -1,0 +1,41 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="concluido">
+      <th mat-header-cell style="width: 2%;" *matHeaderCellDef> Concluido </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox class="example-margin">Finished</mat-checkbox>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell style="width: 5%;" *matHeaderCellDef> Titulo </th>
+      <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="descrição">
+      <th mat-header-cell style="width: 5%;" *matHeaderCellDef> Descrição </th>
+      <td mat-cell *matCellDef="let element">  {{element.descricao}} </td>
+    </ng-container>
+
+        <ng-container matColumnDef="data de vencimento">
+      <th mat-header-cell style="width: 8%;" *matHeaderCellDef> Data </th>
+      <td mat-cell *matCellDef="let element"> {{element.data | date:'short' }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="prioridade">
+      <th mat-header-cell style="width: 2%;" *matHeaderCellDef> Prioridade </th>
+      <td mat-cell *matCellDef="let element"> {{element.prioridade}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="ações">
+        <th mat-header-cell style="width: 5%; padding: 0 0 0 65px;" *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element" style="margin-top: 11px; display: flex;"> 
+          <button mat-button (click)="openDialog(element)"><img src="../../../assets/material-symbols_edit.svg"></button> 
+          <button mat-button (click)="deletTask(element.id)" ><img src="../../../assets/ic_baseline-delete-forever.svg"></button> 
+        </td>
+      </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  

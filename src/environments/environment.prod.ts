@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  mock: "http://localhost:3001/tasks"
 };

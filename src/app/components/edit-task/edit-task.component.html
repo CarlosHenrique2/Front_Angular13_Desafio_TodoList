@@ -1,0 +1,34 @@
+<div>
+    <h1 mat-dialog-title>Edição De Tarefa</h1>
+    <div mat-dialog-content [formGroup]="formtask">
+        <mat-form-field appearance="outline">
+            <mat-label>Atualize seu titulo</mat-label>
+            <input matInput formControlName="titulo">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Atualize sua descrição</mat-label>
+            <input matInput formControlName="descricao">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Atualize sua data</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="data" placeholder="Informe a data da sua tarefa">
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Prioridades</mat-label>
+            <mat-select formControlName="prioridade">
+              <mat-option *ngFor="let prioridade of prioridades"  [value]="prioridade.value">
+                {{ prioridade.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button cdkFocusInitial (click)="editTask()">Salvar Edição</button>
+    </div>
+</div>
