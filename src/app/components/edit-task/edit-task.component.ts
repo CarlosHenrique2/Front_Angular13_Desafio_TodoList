@@ -48,7 +48,7 @@ export class EditTaskComponent implements OnInit {
         this.dialogRef.close(true);
       },
       error: (err: any) => {
-        console.log ()
+        console.log(err)
       }
     })
   }

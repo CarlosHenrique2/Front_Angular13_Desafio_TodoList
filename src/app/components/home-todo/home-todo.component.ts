@@ -8,7 +8,7 @@ import { TaskService } from '../task.service';
   templateUrl: './home-todo.component.html',
   styleUrls: ['./home-todo.component.scss']
 })
-export class HomeTodoComponent implements OnInit {
+export class HomeTodoComponent {
 
   formtask!: FormGroup;
   tasks: tasks[] = [];
@@ -30,15 +30,12 @@ export class HomeTodoComponent implements OnInit {
       })
     }
 
-  ngOnInit(): void { 
-
-  }
-
   public createTask(): void {
     const task = this.formtask.getRawValue()
     this.taskservice.creatTask(task)
     this.taskservice.creatTask(task).subscribe({
       next: (res) => {
+        this.tasks = []
         this.formtask.reset()
       },
       error: console.log

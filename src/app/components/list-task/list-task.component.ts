@@ -21,12 +21,10 @@ export class ListTaskComponent implements OnChanges  {
     ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if(changes['tasks']) {
-      this.updateList() 
-    }
+    this.updateList() 
   }
 
-  public openDialog(tasks: any[]): void {
+  public openDialog(tasks: tasks[]): void {
     const dialogRef = this.dialog.open(EditTaskComponent, {
       data: {task: this.tasks = tasks}
     })
@@ -40,19 +38,17 @@ export class ListTaskComponent implements OnChanges  {
   }
 
   public updateList() {
-    this.taskservice.getAllTaks().subscribe(tasks => {
-    localStorage.setItem("Tarefas", JSON.stringify(tasks))
-    console.log(tasks)
-  })    
-  
-  const tarefas: any = localStorage.getItem("Tarefas")
-  this.dataSource = JSON.parse(tarefas) 
+      this.taskservice.getAllTaks().subscribe(tasks => {
+      localStorage.setItem("Tarefas", JSON.stringify(tasks))
+      this.dataSource = tasks
+    })    
   }
   
 
   public deletTask(id: any): void{
     this.taskservice.deletTask(id).subscribe((task) => {
       localStorage.removeItem(id)
+      this.updateList()
     })
   }
 
