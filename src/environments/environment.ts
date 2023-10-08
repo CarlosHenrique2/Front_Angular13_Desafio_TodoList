@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  local: "http://localhost:3001/tasks"
+  local: "https://apispringboot3crud-production.up.railway.app/tasks"
 };
 
 /*
